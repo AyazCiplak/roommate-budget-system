@@ -6,9 +6,9 @@ const Navbar = () => {
                 {
                 //Add new link when page is set up
                 }
-                <a href="/">New User</a>
-                <a href="/">New Expense</a>
-                <a href='/'>Settings</a>
+                <a href="/add-user">New User</a>
+                <a href="/add-expense">New Expense</a>
+                <a href='/settings'>Settings</a>
                 <a href="/">Home</a>
             </div>
         </nav>
