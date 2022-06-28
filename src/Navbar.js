@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     return ( 
         <nav className="navbar">
@@ -6,10 +8,10 @@ const Navbar = () => {
                 {
                 //Add new link when page is set up
                 }
-                <a href="/add-user">New User</a>
-                <a href="/add-expense">New Expense</a>
-                <a href='/settings'>Settings</a>
-                <a href="/">Home</a>
+                <Link to="/add-user">New User</Link>
+                <Link to="/add-expense">New Expense</Link>
+                <Link to='/settings'>Settings</Link>
+                <Link to="/">Home</Link>
             </div>
         </nav>
      );
