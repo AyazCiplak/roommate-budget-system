@@ -52,3 +52,11 @@ code {
   padding: 10px;
   margin: 10px 10px 0px 0px;
 }
+
+.users-display {
+  display: flex;
+}
+
+.expenses-display {
+  display: flex;
+}
