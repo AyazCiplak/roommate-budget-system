@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import ExpenseList from './ExpenseList';
 
 const Expenses = () => {
     //Array of sample users
@@ -20,15 +21,7 @@ const [expenses, setExpenses] = useState([
                 {
                     //Outputs list of expenses
                 }
-                {expenses.map((expense) => (
-                    <div className="expense-preview" key={expense.id}>
-                        <button>
-                        <h3>{expense.title}</h3>
-                        <p>{expense.description}</p>
-                        <h4>{expense.cost}$</h4>
-                        </button>  
-                    </div>
-                ))}
+                <ExpenseList expenses={expenses}/>
             </div>
         </div>
      );

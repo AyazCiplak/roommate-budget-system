@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import UserList from './UserList';
 
 const Users = () => {
 //Array of sample users
@@ -16,17 +17,7 @@ const [users, setUsers] = useState([
                 <Link to="/add-user">
                     <button>Add User</button>
                 </Link>
-                {
-                    //Outputs list of users
-                }
-                {users.map((user) => (
-                    <div className="user-preview" key={user.id}>
-                        <button>
-                        <h3>{user.name}</h3>
-                        <p>{user.balance}</p>
-                        </button>  
-                    </div>
-                ))}
+                <UserList users={users}/>
             </div>
         </div>
      );

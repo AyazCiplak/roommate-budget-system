@@ -60,3 +60,11 @@ code {
 .expenses-display {
   display: flex;
 }
+
+.user-list {
+  display: flex;
+}
+
+.expense-list{
+  display: flex;
+}
