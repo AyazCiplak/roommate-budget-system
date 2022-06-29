@@ -1,0 +1,3 @@
+{
+    "comment": "To run, open a new terminal and enter npx json-server --watch data/db.json --port 8000"
+}

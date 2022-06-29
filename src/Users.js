@@ -1,14 +1,13 @@
-const Users = () => {
+import { Link } from 'react-router-dom';
 
-    //Redirect to add user page. User page permits to create new user buttons and add to array
-    const handleClick = () => {
-        console.log("(redirect to add user page)");
-    }
+const Users = () => {
 
     return ( 
         <div className="users">
             <h2>Users</h2>
-            <button onClick={handleClick}>Add User</button>
+            <Link to="/add-user">
+                <button>Add User</button>
+            </Link>
         </div>
      );
 }
