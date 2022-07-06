@@ -4,6 +4,7 @@ import Expenses from './Expenses';
 import AddUser from './AddUser';
 import AddExpense from './AddExpense';
 import Settings from './Settings';
+import ExpenseDetails from './ExpenseDetails';
 
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route path="/add-expense">
               <AddExpense />
+            </Route>
+            <Route path="/expenses/:id">
+              <ExpenseDetails />
             </Route>
           </Switch>
         </div>

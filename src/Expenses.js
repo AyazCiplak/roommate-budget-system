@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import ExpenseList from './ExpenseList';
 import useFetchData from './useFetchData';
 
