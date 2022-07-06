@@ -1,18 +1,21 @@
 {
-    "users": [
+    "expenses": [
         {
-            "name": "Name 1",
-            "balance": "0",
+            "title": "Expense 1",
+            "description": "N/A",
+            "cost": "30",
             "id": 1
         },
         {
-            "name": "Name 2",
-            "balance": "20",
+            "title": "Expense 2",
+            "description": "lorem ipsum",
+            "cost": "54",
             "id": 2
         },
         {
-            "name": "Name 3",
-            "balance": "-40",
+            "title": "Expense 3",
+            "description": "",
+            "cost": "500",
             "id": 3
         }
     ]

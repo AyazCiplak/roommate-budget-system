@@ -1,14 +1,24 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ExpenseList from './ExpenseList';
 
 const Expenses = () => {
-    //Array of sample users
-const [expenses, setExpenses] = useState([
-    { title: 'Expense 1', description: 'lorem ipsum', cost: '350', id: 1 },
-    { title: 'Expense 2', description: '', cost: '200', id: 2 },
-    { title: 'Expense 3', description: 'example description', cost: '1200',  id: 3 }
-]);
+
+const [expenses, setExpenses] = useState(null);
+
+//Loading message for user data fetch
+const [isPending, setIsPending] = useState(true);
+
+useEffect(() => {
+    fetch('http://localhost:8000/expenses')
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        setExpenses(data);
+        setIsPending(false);
+    })
+}, [])
 
     return ( 
         
@@ -18,10 +28,8 @@ const [expenses, setExpenses] = useState([
                 <Link to="/add-expense">
                     <button>Add Expenses</button>
                 </Link>
-                {
-                    //Outputs list of expenses
-                }
-                <ExpenseList expenses={expenses}/>
+                { isPending && <div>Loading...</div> }
+                { expenses && <ExpenseList expenses={expenses}/> }
             </div>
         </div>
      );

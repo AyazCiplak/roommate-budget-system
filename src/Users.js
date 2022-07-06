@@ -4,17 +4,13 @@ import UserList from './UserList';
 
 const Users = () => {
 
-const [users, setUsers] = useState(null);
+    //Array of sample users (not linked to database)
+    const [users, setUsers] = useState([
+        { name: 'User 1', balance: '350', id: 1 },
+        { name: 'User 2', balance: '2000', id: 2 },
+        { name: 'User 3', balance: '1200',  id: 3 }
+    ]);
 
-useEffect(() => {
-    fetch('http://localhost:8000/users')
-    .then(res => {
-        return res.json();
-    })
-    .then(data => {
-        setUsers(data);
-    })
-}, [])
 
     return ( 
         <div className="users">
@@ -23,7 +19,7 @@ useEffect(() => {
                 <Link to="/add-user">
                     <button>Add User</button>
                 </Link>
-                {users && <UserList users={users}/>}
+                <UserList users={users}/>
             </div>
         </div>
      );
