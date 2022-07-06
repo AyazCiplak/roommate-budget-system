@@ -1,21 +1,26 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const AddExpense = () => {
     const [title, setTitle] = useState('');
     const [cost, setCost] = useState('');
     const [description, setDescription] = useState('');
+    const [isPending, setIsPending] = useState(false);
+    const history = useHistory();
     
     const handleSubmit = (e) => {
         e.preventDefault();
         const expense = { title, cost, description };
+        
+        setIsPending(true);
 
         fetch('http://localhost:8000/expenses', {
             method: 'POST',
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(expense)
         }).then(() => {
-            console.log("New expense added");
+            setIsPending(false);
+            history.push('/');
         })
     }
 
@@ -46,7 +51,8 @@ const AddExpense = () => {
                     //In future, add <select /> div to select user to pay
                 }
             
-                <button>Add Expense</button>
+                { !isPending && <button>Add Expense</button> }
+                { isPending && <button disabled>Adding expense...</button>}
             </form>
             
             <Link to="/">
